@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bale Payment</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="btn">Pay with Crypto</button>
+
+    <p id="pay"></p>
+
+    <script>
+      const btn = document.getElementById("btn");
+      const pay = document.getElementById("pay");
+
+      btn.onclick = async () => {
+        const res = await fetch(
+          "http://localhost:5000/cryptopayment-47232/us-central1/createCharge"
+        );
+        const data = await res.json();
+
+        console.log(data);
+
+        pay.innerHTML = `<a href="${data.hosted_url}">Pay Now!</a>`;
+      };
+    </script>
+  </body>
+</html>

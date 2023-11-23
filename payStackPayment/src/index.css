@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Form Styling */
+  .form_Container {
+    @apply flex flex-col  mt-20 items-center justify-center mx-auto space-y-4;
+  }
+
+  .form_Group {
+    @apply flex flex-col space-y-1;
+  }
+
+  .form_Input {
+    @apply h-[33px] bg-transparent border border-blue-500  outline-none p-4;
+  }
+
+  .form_Button {
+    @apply bg-blue-800 w-[100px] h-[40px] text-white text-xl rounded-[8px];
+  }
+}
